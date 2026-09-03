@@ -10,6 +10,8 @@ public class BattleManager : MonoBehaviour
 {
     //all units in the fight
     public List<unit> fighters = new List<unit>();
+    // list of possable enemy incounters
+    public List<Enemy[]> encounters = new List<Enemy[]>();
     //all enemies in the fight, max of 5
     public Enemy[] enemies = new Enemy[5];
     //sets what all fighters action speed starts at
