@@ -26,21 +26,12 @@ public class BattleManager : MonoBehaviour
     public TextMeshProUGUI[] allyTargetButtonsText = new TextMeshProUGUI[4];
     public TextMeshProUGUI[] enemyTargetButtonsText = new TextMeshProUGUI[5];
     // positions for party ui
-    public GameObject PartyUIPosition1;
-    public GameObject PartyUIPosition2;
-    public GameObject PartyUIPosition3;
-    public GameObject PartyUIPosition4;
+    public GameObject[] partyUIPositions = new GameObject[4];
+    
     //positions for party members
-    public GameObject PartyPosition1;
-    public GameObject PartyPosition2;
-    public GameObject PartyPosition3;
-    public GameObject PartyPosition4;
+    public GameObject[] partyPositions = new GameObject[4];
     //poaitions for enemies
-    public GameObject EnemyPosition1;
-    public GameObject EnemyPosition2;
-    public GameObject EnemyPosition3;
-    public GameObject EnemyPosition4;
-    public GameObject EnemyPosition5;
+    public GameObject[] enemyPositions = new GameObject[5];
     private void Awake()
     {
         battleStart();
@@ -183,6 +174,8 @@ public class BattleManager : MonoBehaviour
             {
                 fighters.Add(PartyManager.activeParty[i]);
                 allyTargetButtonsText[i].text = PartyManager.activeParty[i].name;
+                PartyManager.activeParty[i].UIBase.transform.position= partyUIPositions[i].transform.position;
+                PartyManager.activeParty[i].Body.transform.position = partyPositions[i].transform.position;
             }
         }
         for(int i = 0;i<enemies.Length; i++)
@@ -192,6 +185,8 @@ public class BattleManager : MonoBehaviour
                 fighters.Add(enemies[i]);
                 
                 enemyTargetButtonsText[i].text=enemies[i].name;
+                enemies[i].Body.transform.position=enemyPositions[i].transform.position;
+                enemies[i].Body.transform.position = new Vector3 (enemyPositions[i].transform.position.x, enemyPositions[i].transform.position.y +3, enemyPositions[i].transform.position.z);
             }
         }
         for (int i = 0; i < fighters.Count; i++)
