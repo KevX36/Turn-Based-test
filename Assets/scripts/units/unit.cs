@@ -172,12 +172,7 @@ public class unit : MonoBehaviour
         armor = arm; 
         updateStats(false);
     }
-    //boost base stats when leveling up
-    public void LevelUp(int hp, int mp, int str, int mag, int vit, int spd, int luc)
-    {
-        stats.LevelUp(hp, mp, str, mag, vit, spd, luc);
-        updateStats(true);
-    }
+    
     //types of stat buffs/debuffs
     public enum BuffType
     {

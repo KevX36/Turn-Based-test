@@ -147,14 +147,7 @@ public class BattleManager : MonoBehaviour
             {
                 for (int j = 0; j < PartyManager.allies.Count; j++)
                 {
-                    PartyManager.allies[j].exp += enemies[i].exp;
-                    if (PartyManager.allies[j].level < 50)
-                    {
-                        if(PartyManager.allies[j].exp >= PartyManager.allies[j].EXPForLevel[PartyManager.allies[j].level])
-                        {
-                            PartyManager.allies[j].LevelUp(PartyManager.allies[j].HPBoostOnLevel[PartyManager.allies[j].level], PartyManager.allies[j].MPBoostOnLevel[PartyManager.allies[j].level], PartyManager.allies[j].STRBoostOnLevel[PartyManager.allies[j].level], PartyManager.allies[j].MAGBoostOnLevel[PartyManager.allies[j].level], PartyManager.allies[j].VITBoostOnLevel[PartyManager.allies[j].level], PartyManager.allies[j].SPDBoostOnLevel[PartyManager.allies[j].level], PartyManager.allies[j].LUCBoostOnLevel[PartyManager.allies[j].level]);
-                        }
-                    }
+                    PartyManager.allies[j].GainEXP(enemies[i].exp);
                 }
             }
         }
