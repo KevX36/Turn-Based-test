@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Stats : MonoBehaviour
+public class Stats
 {
     public Stats(int hp,int mp,int str,int mag,int vit, int spd, int luc)
     {

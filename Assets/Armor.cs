@@ -2,7 +2,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Armor : MonoBehaviour
+public class Armor
 {
     //base defense
     public int Resistance;
